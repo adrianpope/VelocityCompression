@@ -11,10 +11,12 @@ def df_add_keys(df):
     dx = ax/mag
     dy = ay/mag
     dz = az/mag
-    df['fof_halo_angmom_mag'] = mag
     df['fof_halo_angmom_dx'] = dx
     df['fof_halo_angmom_dy'] = dy
     df['fof_halo_angmom_dz'] = dz
+    df['fof_halo_angmom_mag'] = mag
+    mass = df['fof_halo_mass']
+    df['fof_halo_specific_angmom_mag'] = mag/mass
     return df
 
 def df_merge(df1, df1_suffix, df2, df2_suffix):
